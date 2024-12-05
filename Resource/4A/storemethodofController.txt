@@ -1,0 +1,5 @@
+ public function store(Request $request) {
+        \App\Models\Employee::create($request->all());
+        return redirect('/employees');
+    }
+    

@@ -1,0 +1,13 @@
+ public function show($id)
+    {
+        // Fetch employee data by ID
+        $employee = Employee::find($id);
+
+        // Check if employee exists, if not, show a 404 error
+        if (!$employee) {
+            abort(404, 'Employee not found');
+        }
+
+        // Return the employee details view and pass the employee data
+        return view('employees.details', compact('employee'));
+    }
